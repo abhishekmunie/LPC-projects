@@ -1,4 +1,4 @@
-package lpcprojects.computer.Numbers;
+package lpcprojects.schoolprograms.Numbers;
 
 import java.io.BufferedReader;
 import java.io.IOException;

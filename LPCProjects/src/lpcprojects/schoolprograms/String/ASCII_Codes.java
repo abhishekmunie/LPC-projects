@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package lpcprojects.computer.String;
+package lpcprojects.schoolprograms.String;
 
 /**
  *

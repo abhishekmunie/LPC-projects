@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lpcprojects.computer.Series;
+package lpcprojects.schoolprograms.Series;
 
 import java.io.*;
 

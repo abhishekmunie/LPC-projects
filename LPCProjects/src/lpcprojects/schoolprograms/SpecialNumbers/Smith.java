@@ -1,4 +1,4 @@
-package lpcprojects.computer.SpecialNumbers;
+package lpcprojects.schoolprograms.SpecialNumbers;
 
 import java.io.*;
 import java.util.Arrays;

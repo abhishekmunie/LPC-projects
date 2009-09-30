@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lpcprojects.computer.Array;
+package lpcprojects.schoolprograms.Array;
 
 import java.io.BufferedReader;
 import java.io.IOException;
