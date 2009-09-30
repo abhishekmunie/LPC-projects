@@ -4,8 +4,7 @@
  */
 package lpcprojects.Mathematics;
 
-import abhishekjava.Main;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Contains meathods which can be use be use to check weather the number is one of these special number
@@ -186,7 +185,7 @@ public class SpecialNumbers {
                     "6 - Automorphic\n" +
                     "7 - Palindrome");
             System.out.println("Enter a number.");
-            int n = Integer.parseInt(Main.BR.readLine());
+            int n = Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
             switch (n) {
 
             }
