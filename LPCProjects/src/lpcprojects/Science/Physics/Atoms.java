@@ -1,6 +1,6 @@
 package lpcprojects.Science.Physics;
 
-import abhishekjava.Science.Constants;
+import lpcprojects.Science.Constants;
 import java.math.BigDecimal;
 
 /**
