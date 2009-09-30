@@ -5,9 +5,7 @@
  */
 package lpcprojects.System;
 
-import javax.swing.LookAndFeel;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import java.awt.Component;
 
 /**
  *
@@ -17,13 +15,16 @@ public class LookAndFeelJDialog extends javax.swing.JDialog {
 
     private static final long serialVersionUID = -1719565266573162863L;
     java.util.Vector<SupportedLaF> supportedLaFs = LookAndFeels.getLookAndFeels();
+    Component[] c;
 
     /** Creates new form LookAndFeelJDialog
      * @param parent
-     * @param modal 
+     * @param modal
+     * @param c - components to be upd
      */
-    public LookAndFeelJDialog(java.awt.Frame parent, boolean modal) {
+    public LookAndFeelJDialog(java.awt.Frame parent, boolean modal, Component... c) {
         super(parent, modal);
+        this.c = c;
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(343, 108));
         setTitle("Look and Feel");
@@ -45,6 +46,9 @@ public class LookAndFeelJDialog extends javax.swing.JDialog {
         SupportedLaF supportedLaF = ((SupportedLaF) LaFComboBox.getSelectedItem());
         try {
             LookAndFeels.setLookAndFeel(supportedLaF, this);
+            for (int i = 0; i < c.length; i++) {
+                LookAndFeels.setLookAndFeel(supportedLaF, c[i]);
+            }
             this.pack();
         } catch (javax.swing.UnsupportedLookAndFeelException exc) {
             // This should not happen because we already checked

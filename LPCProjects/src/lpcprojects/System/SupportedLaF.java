@@ -10,7 +10,7 @@ import javax.swing.LookAndFeel;
  *
  * @author Abhishek
  */
-public class SupportedLaF {
+class SupportedLaF {
 
     String name;
     javax.swing.LookAndFeel laf;
