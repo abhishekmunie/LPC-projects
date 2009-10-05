@@ -31,7 +31,8 @@ public class FibonacciSeries {
     }
 
     static void input() throws IOException {
-        System.out.print("Enter the number of term till where the series has to be calculated: ");
+        System.out.print("Enter the number of term till" +
+                " where the series has to be calculated: ");
         num = Integer.parseInt(BR.readLine());
     }
 

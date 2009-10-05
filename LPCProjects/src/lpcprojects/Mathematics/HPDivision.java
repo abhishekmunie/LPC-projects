@@ -30,7 +30,8 @@ public class HPDivision {
         boolean h = false;
         boolean r = false;
         long f = 1;
-        System.out.println(dividend + " divided by " + divisor + " to " + decimalPlace + " decimal place is:");
+        System.out.println(dividend + " divided by " + divisor
+                + " to " + decimalPlace + " decimal place is:");
         for (;;) {
             if (dividend < divisor) {
                 if (!r) {

@@ -51,7 +51,8 @@ public class MatrixTranspose {
      */
     public static void main(String[] args) throws IOException {
         System.out.println("~~~~~Welcome~~~~~");
-        System.out.println("This program we demonstrates Matrix Operations - Transpose.");
+        System.out.println("This program we demonstrates" +
+                " Matrix Operations - Transpose.");
         System.out.println();
         input();
         System.out.println();
@@ -149,7 +150,8 @@ public class MatrixTranspose {
         printSumOFColumns(matrix);
     }
 
-    public static void printResult(int[][] A, int[][] B, int[][] Result, char oper) {
+    public static void printResult(int[][] A, int[][] B,
+            int[][] Result, char oper) {
         for (int i = 0; i < Result.length; i++) {
             for (int j = 0; j < A[i].length; j++) {
                 System.out.print(A[i][j] + "\t");

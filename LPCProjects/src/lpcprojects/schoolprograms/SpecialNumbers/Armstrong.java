@@ -12,17 +12,24 @@ public class Armstrong {
 
     static int num;
     static int result = 0;
+    static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        input();
-        isArmstrong();
+        for (;;) {
+            input();
+            isArmstrong();
+            System.out.println();
+            System.out.println("Do you want to continue?(yes/no)");
+            if (BR.readLine().equalsIgnoreCase("no")) {
+                break;
+            }
+        }
     }
 
     static void input() throws IOException {
-        BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter the no. to be checked to be an Armstrong no.: ");
         num = Integer.parseInt(BR.readLine());
     }

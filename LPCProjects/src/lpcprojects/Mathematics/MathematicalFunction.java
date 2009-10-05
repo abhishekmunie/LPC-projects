@@ -7,7 +7,7 @@ package lpcprojects.Mathematics;
 import java.math.BigInteger;
 
 /**
- * Contains some mathematical functions (i.e. factors, primerFactors, factorial
+ * Contains some mathematical functions (i.e. getFactors, primerFactors, getFactorial
  *
  * @author Abhishek
  */
@@ -18,7 +18,7 @@ public class MathematicalFunction {
      * @param num
      * @return
      */
-    public static int[] DigitArray(int num) {
+    public static int[] getDigitArray(int num) {
         int[] digitIs = new int[Double.toString(num).length()];
         for (int i = 0; i < digitIs.length; i++) {
             digitIs[i] = num % 10;
@@ -28,47 +28,45 @@ public class MathematicalFunction {
     }
 
     /**
-     * Returns the factors of the number in form of an int Array.
+     * Returns the getFactors of the number in form of an int Array.
      * @param num
-     * @return int[] of factors
+     * @return int[] of getFactors
      */
-    public static int[] factors(int num) {
-        int leni = 0;
-        int interlen = 0;
+    public static int[] getFactors(int num) {
+        if (num < 0) {
+        }
+        int counter = 1;
         int b = num / 2;
+        int[] factors = new int[b];
+        factors[0] = 1;
         for (int i = 1; i < b; i++) {
-            if (num % i == 0) {
-                leni++;
+            if ((num % i) == 0) {
+                factors[counter] = i;
+                counter++;
             }
         }
-        int[] A = new int[leni + 1];
-        A[0] = 1;
-        for (int i = 1; i < b; i++) {
-            if (num % i == 0) {
-                A[interlen] = i;
-                interlen++;
-            }
-        }
-        A[interlen] = num;
-        return A;
+        factors[counter] = num;
+        return java.util.Arrays.copyOf(factors, (counter + 1));
     }
 
     /**
-     * Returns the prime factors of the number in form of an int Array.
+     * Returns the prime getFactors of the number in form of an int Array.
      * @param num
-     * @param code
-     * @return int[] of prime factors
-     * @throws MathematicalException
+     * @return int[] of prime getFactors
+     * @throws IllegalNumberException
      */
-    public static int[] getPrimeFactors(int n) {
+    public static int[] getPrimeFactors(int num) throws IllegalNumberException {
+        if (num < 0) {
+            throw new IllegalNumberException("The no. whose factorial has to be found is less than one");
+        }
         int c = 0;
-        int[] primeFactors = new int[n / 2];
-        while (n > 1) {
-            for (int i = 2; i <= n; i++) {
-                if (n % i == 0) {
+        int[] primeFactors = new int[num / 2];
+        while (num > 1) {
+            for (int i = 2; i <= num; i++) {
+                if (num % i == 0) {
                     primeFactors[c] = i;
                     c++;
-                    n /= i;
+                    num /= i;
                     break;
                 }
             }
@@ -76,13 +74,13 @@ public class MathematicalFunction {
         return java.util.Arrays.copyOf(primeFactors, c);
     }
 
-    /**
-     * Returns the prime factors of the number in form of an int Array.
-     * @param num
-     * @param code
-     * @return int[] of prime factors
-     * @throws MathematicalException
-     */
+//    /**
+//     * Returns the prime getFactors of the number in form of an int Array.
+//     * @param num
+//     * @param code
+//     * @return int[] of prime getFactors
+//     * @throws MathematicalException
+//     */
 //    public static int[] primerFactors(int num) throws MathematicalException {
 //        if (num <) {
 //            int[] pF
@@ -132,15 +130,13 @@ public class MathematicalFunction {
 //        }
 //        return A;
 //    }
-
     /**
-     * Returns the factorial of the number.
+     * Returns the getFactorial of the number.
      * @param num
-     * @param code
-     * @return int of factorial
-     * @throws abhishekjava.Mathematics.MathematicalException
+     * @return int of getFactorial
+     * @throws IllegalNumberException
      */
-    public static long factorial(long num) throws IllegalNumberException {
+    public static long getFactorial(long num) throws IllegalNumberException {
         if (num < 0) {
             throw new IllegalNumberException("The no. whose factorial has to be found is less than one");
         }
