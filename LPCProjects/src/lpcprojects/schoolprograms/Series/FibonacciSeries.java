@@ -11,18 +11,26 @@ import java.io.InputStreamReader;
 public class FibonacciSeries {
 
     static int num;
+    static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
     /**
      * @param args the command line arguments
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        input();
-        computSeries(num);
+        for (;;) {
+            input();
+            computSeries(num);
+            System.out.println();
+            System.out.println("Do you want to continue?(yes/no)");
+            if (BR.readLine().equalsIgnoreCase("no")) {
+                break;
+            }
+            System.out.println();
+        }
     }
 
     static void input() throws IOException {
-        BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter the number of term till where the series has to be calculated: ");
         num = Integer.parseInt(BR.readLine());
     }

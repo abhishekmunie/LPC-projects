@@ -4,7 +4,9 @@
  */
 package lpcprojects.schoolprograms.Series;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -15,18 +17,26 @@ public class Series_1 {
     static int n;
     static int result = 1;
     static int a;
+    static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        input();
-        computeSeries();
-        display();
+        for (;;) {
+            input();
+            computeSeries();
+            display();
+            System.out.println();
+            System.out.println("Do you want to continue?(yes/no)");
+            if (BR.readLine().equalsIgnoreCase("no")) {
+                break;
+            }
+            System.out.println();
+        }
     }
 
     static void input() throws IOException {
-        BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter the value of a: ");
         a = Integer.parseInt(BR.readLine());
         System.out.print("Enter the value of n: ");

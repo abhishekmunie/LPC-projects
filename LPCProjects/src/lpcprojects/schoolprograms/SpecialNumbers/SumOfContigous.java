@@ -1,6 +1,8 @@
 package lpcprojects.schoolprograms.SpecialNumbers;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -11,18 +13,26 @@ public class SumOfContigous {
     static int num;
     static int s;
     static int j;
+    static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
     /**
      * @param args the command line arguments
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        input();
-        compute(num);
+        for (;;) {
+            input();
+            compute(num);
+            System.out.println();
+            System.out.println("Do you want to continue?(yes/no)");
+            if (BR.readLine().equalsIgnoreCase("no")) {
+                break;
+            }
+            System.out.println();
+        }
     }
 
     static void input() throws IOException {
-        BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter the number: ");
         num = Integer.parseInt(BR.readLine());
     }

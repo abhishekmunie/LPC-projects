@@ -1,10 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package lpcprojects.schoolprograms.SpecialNumbers;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -13,22 +11,30 @@ import java.io.*;
 public class Composite {
 
     static int num;
+    static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
     /**
      * @param args the command line arguments
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        input();
-        if (isComposite()) {
-            System.out.println("The no. is a Composite number.");
-        } else {
-            System.out.println("The no. is not a Composite number.");
+        for (;;) {
+            input();
+            if (isComposite()) {
+                System.out.println("The no. is a Composite number.");
+            } else {
+                System.out.println("The no. is not a Composite number.");
+            }
+            System.out.println();
+            System.out.println("Do you want to continue?(yes/no)");
+            if (BR.readLine().equalsIgnoreCase("no")) {
+                break;
+            }
+            System.out.println();
         }
     }
 
     static void input() throws IOException {
-        BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter the number: ");
         num = Integer.parseInt(BR.readLine());
     }
