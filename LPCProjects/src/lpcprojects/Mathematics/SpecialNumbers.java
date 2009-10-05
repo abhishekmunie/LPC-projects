@@ -157,7 +157,7 @@ public class SpecialNumbers {
      * and returns the corresponding boolean value.<tr>
      * A String is a Palindrome, when the String remains
      * unchanged on reversing its character.
-     * @param n - The String to be checked
+     * @param nS - The String to be checked
      * @return boolean value i.e. the no. is palindrome or not
      */
     public static boolean isPalindrome(String nS) {
@@ -202,7 +202,6 @@ public class SpecialNumbers {
      * A number is Special Number, when sum of getFactorial of its digits is equal to the number.
      * @param n - The number to be checked
      * @return boolean value i.e. the no. is special or not
-     * @throws abhishekjava.Mathematics.MathematicalException
      */
     public static boolean isSpecial(int n) {
         int[] digitA = MathematicalFunction.getDigitArray(n);
