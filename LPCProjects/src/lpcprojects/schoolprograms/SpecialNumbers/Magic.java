@@ -25,12 +25,20 @@ public class Magic {
 									} else {
 												System.out.println("The number is not a Magic number.");
 									}
-									System.out.println();
-									System.out.println("Do you want to continue?(yes/no)");
-									if (BR.readLine().equalsIgnoreCase("no")) {
-												break;
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
 									}
-									System.out.println();
 						}
 			}
 
@@ -41,7 +49,6 @@ public class Magic {
 
 			/**
 			 *
-			 * @param num
 			 * @return
 			 */
 			public static boolean isMagic() {

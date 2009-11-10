@@ -25,12 +25,20 @@ public class Prime {
 									} else {
 												System.out.println("The number is not a Prime number.");
 									}
-									System.out.println();
-									System.out.println("Do you want to continue?(yes/no)");
-									if (BR.readLine().equalsIgnoreCase("no")) {
-												break;
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
 									}
-									System.out.println();
 						}
 			}
 
@@ -42,8 +50,7 @@ public class Prime {
 			/**
 			 * Checks that ihe number passed to it is a Prime Number or not
 			 * and returns the corresponding boolean value.<tr>
-			 * A number is prime if it has 1 and itself as its only getFactors.
-			 * @param n - The number to be checked
+			 * A number is prime if it has 1 and itself as its only factors.
 			 * @return boolean value i.e. the no. is prime or not
 			 */
 			public static boolean isPrime() {
@@ -54,15 +61,13 @@ public class Prime {
 									return true;
 						}
 						double limit = Math.ceil(Math.sqrt(num)) + 1;
-						boolean isPrime = true;
-						int j = 3;
+						int j = 2;
 						while (j < limit) {
 									if (num % j == 0) {
-												isPrime = false;
-												break;
+												return false;
 									}
-									j += 2;
+									j++;
 						}
-						return isPrime;
+						return true;
 			}
 }

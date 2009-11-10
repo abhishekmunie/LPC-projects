@@ -10,49 +10,57 @@ import java.io.InputStreamReader;
  */
 public class SumOfContigous {
 
-    static int num;
-    static int s;
-    static int j;
-    static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
+			static int num;
+			static int s;
+			static int j;
+			static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
-    /**
-     * @param args the command line arguments
-     * @throws IOException
-     */
-    public static void main(String[] args) throws IOException {
-        for (;;) {
-            input();
-            compute(num);
-            System.out.println();
-            System.out.println("Do you want to continue?(yes/no)");
-            if (BR.readLine().equalsIgnoreCase("no")) {
-                break;
-            }
-            System.out.println();
-        }
-    }
+			/**
+			 * @param args the command line arguments
+			 * @throws IOException
+			 */
+			public static void main(String[] args) throws IOException {
+						for (;;) {
+									input();
+									compute(num);
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
+									}
+						}
+			}
 
-    static void input() throws IOException {
-        System.out.print("Enter the number: ");
-        num = Integer.parseInt(BR.readLine());
-    }
+			static void input() throws IOException {
+						System.out.print("Enter the number: ");
+						num = Integer.parseInt(BR.readLine());
+			}
 
-    public static void compute(int n) {
-        for (int i = 0; i < n; i++) {
-            s = 0;
-            for (j = i; j < n; j++) {
-                s += j;
-                if (s == n) {
-                    for (int k = i; k <= j; k++) {
-                        System.out.print(k);
-                        if (k < j) {
-                            System.out.print(" + ");
-                        } else {
-                            System.out.println(" = " + n);
-                        }
-                    }
-                }
-            }
-        }
-    }
+			public static void compute(int n) {
+						for (int i = 0; i < n; i++) {
+									s = 0;
+									for (j = i; j < n; j++) {
+												s += j;
+												if (s == n) {
+															for (int k = i; k <= j; k++) {
+																		System.out.print(k);
+																		if (k < j) {
+																					System.out.print(" + ");
+																		} else {
+																					System.out.println(" = " + n);
+																		}
+															}
+												}
+									}
+						}
+			}
 }

@@ -25,12 +25,20 @@ public class Buzz {
 									} else {
 												System.out.println("The number is not a Buzz number.");
 									}
-									System.out.println();
-									System.out.println("Do you want to continue?(yes/no)");
-									if (BR.readLine().equalsIgnoreCase("no")) {
-												break;
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
 									}
-									System.out.println();
 						}
 			}
 
@@ -44,7 +52,6 @@ public class Buzz {
 			 * and returns the corresponding boolean value.<tr>
 			 * A number is Buzz Number, when the number
 			 * is either divisible by 7 or its last digit is 7.
-			 * @param n - The number to be checked
 			 * @return boolean value i.e. the no. is buzz or not
 			 */
 			public static boolean isBuzz() {

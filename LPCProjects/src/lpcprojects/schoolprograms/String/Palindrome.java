@@ -1,16 +1,14 @@
-package lpcprojects.schoolprograms.SpecialNumbers;
+package lpcprojects.schoolprograms.String;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 /**
  *
  * @author Abhishek
  */
-public class Composite {
+public class Palindrome {
 
-			static int num;
+			static String str, reverseStr;
 			static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
 			/**
@@ -20,15 +18,19 @@ public class Composite {
 			public static void main(String[] args) throws IOException {
 						for (;;) {
 									input();
-									if (isComposite()) {
-												System.out.println("The no. is a Composite number.");
+									if (reverseStr.equals(str)) {
+												System.out.println("The String is a Palindrome.");
+									} else if(reverseStr.equalsIgnoreCase(str)) {
+												System.out.println("The String is a Palindrome, if the case of the characters is ignored.");
 									} else {
-												System.out.println("The no. is not a Composite number.");
+												System.out.println("The String is not a Palindrome.");
+
 									}
 									for (;;) {
 												System.out.println();
 												System.out.println("Do you want to continue? (yes/no)");
 												String c = BR.readLine();
+												System.out.println();
 												if (c.equalsIgnoreCase("yes")) {
 															break;
 												} else if (c.equalsIgnoreCase("no")) {
@@ -37,22 +39,13 @@ public class Composite {
 															System.out.println("Invalid Entry.\n");
 															continue;
 												}
-												System.out.println();
 									}
 						}
 			}
 
 			static void input() throws IOException {
-						System.out.print("Enter the number: ");
-						num = Integer.parseInt(BR.readLine());
-			}
-
-			static boolean isComposite() {
-						for (int i = 2; i < num; i++) {
-									if (num % i == 0) {
-												return true;
-									}
-						}
-						return false;
+						System.out.print("Enter the string: ");
+						str = BR.readLine();
+						reverseStr = new StringBuffer(str).reverse().toString();
 			}
 }

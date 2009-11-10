@@ -7,8 +7,6 @@ package lpcprojects.Mathematics;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Contains meathods which can be use be use to check weather the number is one of these special number
@@ -21,7 +19,7 @@ public class SpecialNumbers {
 			 * Checks that ihe number passed to it is a Armstrong Number or not
 			 * and returns the corresponding boolean value.<tr>
 			 * A number is Armstrong Number if the sum of cubes of its digts is equal to the number.<tr>
-			 * 13
+			 * Example: 153.
 			 * @param num - The number to be checked
 			 * @return
 			 */
@@ -42,19 +40,21 @@ public class SpecialNumbers {
 			/**
 			 * Check weather the no. is a Automorphic Number or not
 			 * and returns the corresponding boolean value.<tr>
-			 *
+			 * A number is an Automorphic number if the square of the number has the number at its end<tr>
+			 * Example: 5; 6.
 			 * @param n - The number to be checked
 			 * @return boolean value i.e. the no. is automorphic or not
 			 */
 			public static boolean isAutomorphic(int n) {
-						return true;
+						return (Math.pow(n, 2) % 10 == n);
 			}
 
 			/**
 			 * Check weather the no. is a Buzz Number or not
 			 * and returns the corresponding boolean value.<tr>
 			 * A number is Buzz Number, when the number
-			 * is either divisible by 7 or its last digit is 7.
+			 * is either divisible by 7 or its last digit is 7.<tr>
+			 * Example: 7; 77; 56.
 			 * @param n - The number to be checked
 			 * @return boolean value i.e. the no. is buzz or not
 			 */
@@ -62,6 +62,14 @@ public class SpecialNumbers {
 						return ((n % 7 == 0) || (n % 10 == 7));
 			}
 
+			/**
+			 * Checks that ihe number passed to it is a Composite Number or not
+			 * and returns the corresponding boolean value.<tr>
+			 * A number is prime if it has any factor other than 1 and itself.<tr>
+			 * Example: 8; 18;
+			 * @param n
+			 * @return
+			 */
 			public static boolean isComposite(int n) {
 						for (int i = 2; i < n; i++) {
 									if (n % i == 0) {
@@ -72,7 +80,41 @@ public class SpecialNumbers {
 			}
 
 			/**
-			 * On successive addition of digit a
+			 * <tr>
+			 * Example:
+			 * @param num
+			 * @return
+			 */
+			public static int[] isLucky(int num) {
+						int count;
+						int[] numSeries, luckySeries;
+						numSeries = new int[num];
+						for (int i = 0; i < numSeries.length; i++) {
+									numSeries[i] = i + 1;
+						}
+						int n = 2;
+						int c = 0;
+						luckySeries = numSeries;
+						for (count = numSeries.length; count >= n; n++) {
+									c = 0;
+									for (int i = 0; i < count; i++) {
+												if (((i + 1) % n) != 0) {
+															luckySeries[c] = numSeries[i];
+															c++;
+												}
+									}
+									count = c;
+									numSeries = luckySeries;
+						}
+						return luckySeries;
+			}
+
+			/**
+			 * Checks that ihe number passed to it is a Magic Number or not
+			 * and returns the corresponding boolean value.<tr>
+			 * A number is a magic number if on successive addition of digit
+			 * the final result is 1 (or number on dividing by 9 gives 1 as remainder)<tr>
+			 * Example: 91; 55.
 			 * @param num
 			 * @return
 			 */
@@ -97,7 +139,8 @@ public class SpecialNumbers {
 			/**
 			 * Checks that ihe number passed to it is a Perfect Number or not
 			 * and returns the corresponding boolean value.<tr>
-			 *
+			 * A number is perfect if the sum of its factors is equal to the number.<tr>
+			 * Example:
 			 * @param num - The number to be checked
 			 * @return
 			 */
@@ -118,7 +161,8 @@ public class SpecialNumbers {
 			/**
 			 * Checks that ihe number passed to it is a Prime Number or not
 			 * and returns the corresponding boolean value.<tr>
-			 * A number is prime if it has 1 and itself as its only getFactors.
+			 * A number is prime if it has 1 and itself as its only factors.<tr>
+			 * Example: 7; 9.
 			 * @param n - The number to be checked
 			 * @return boolean value i.e. the no. is prime or not
 			 */
@@ -130,23 +174,22 @@ public class SpecialNumbers {
 									return true;
 						}
 						double limit = Math.ceil(Math.sqrt(n)) + 1;
-						boolean isPrime = true;
-						int j = 3;
+						int j = 2;
 						while (j < limit) {
 									if (n % j == 0) {
-												isPrime = false;
-												break;
+												return false;
 									}
-									j += 2;
+									j++;
 						}
-						return isPrime;
+						return true;
 			}
 
 			/**
 			 * Check weather the no. is a Palindrome Number or not
 			 * and returns the corresponding boolean value.<tr>
 			 * A number is Palindrome Number, when the number
-			 * remains unchanged on reversing its digits.
+			 * remains unchanged on reversing its digits.<tr>
+			 * Example: 131; 1221.
 			 * @param n - The number to be checked
 			 * @return boolean value i.e. the no. is palindrome or not
 			 */
@@ -168,7 +211,8 @@ public class SpecialNumbers {
 			 * Check weather the String is a Palindrome or not
 			 * and returns the corresponding boolean value.<tr>
 			 * A String is a Palindrome, when the String remains
-			 * unchanged on reversing its character.
+			 * unchanged on reversing its character.<tr>
+			 * Example: "mom".
 			 * @param nS - The String to be checked
 			 * @return boolean value i.e. the no. is palindrome or not
 			 */
@@ -177,9 +221,11 @@ public class SpecialNumbers {
 			}
 
 			/**
+			 * Check weather the number is a Smith number or not
+			 * and returns the corresponding boolean value.<tr>
 			 * Smith number is a number who's sum of digits is equal
-			 * to the sun of digits of Prime Factors of the number.
-			 * e.g. 666.
+			 * to the sun of digits of Prime Factors of the number.<tr>
+			 * Example: 666.
 			 * @param n
 			 * @return
 			 */
@@ -211,7 +257,9 @@ public class SpecialNumbers {
 			/**
 			 * Check weather the no. is a Special Number or not
 			 * and returns the corresponding boolean value.<tr>
-			 * A number is Special Number, when sum of getFactorial of its digits is equal to the number.
+			 * A number is Special Number, when
+				* sum of getFactorial of its digits is equal to the number.<tr>
+			 * Example: 145.
 			 * @param n - The number to be checked
 			 * @return boolean value i.e. the no. is special or not
 			 */
@@ -237,7 +285,8 @@ public class SpecialNumbers {
 			 * Check weather the no. is a Unique Number or not
 			 * and returns the corresponding boolean value.<tr>
 			 * A number is Unique Number, if any digit is not repeated in it.
-			 * @param n - The number to be checked
+			 * @param n - The number to be checked<tr>
+			 * Example: 134625798.
 			 * @return boolean value i.e. the no. is unique or not
 			 */
 			public static boolean isUnique(int n) {

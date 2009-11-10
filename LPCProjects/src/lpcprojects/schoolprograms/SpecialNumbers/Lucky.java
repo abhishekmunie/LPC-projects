@@ -1,7 +1,6 @@
 package lpcprojects.schoolprograms.SpecialNumbers;
 
 import java.io.*;
-import java.util.Arrays;
 
 /**
  *
@@ -15,60 +14,62 @@ public class Lucky {
 
 			/**
 			 * @param args the command line arguments
+			 * @throws IOException
 			 */
 			public static void main(String[] args) throws IOException {
 						for (;;) {
 									input();
-									computeLuckey();
+									computeLucky();
 									System.out.println();
 									printLucky();
-									System.out.println();
-									System.out.println("Do you want to continue?(yes/no)");
-									if (BR.readLine().equalsIgnoreCase("no")) {
-												break;
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
 									}
-									System.out.println();
 						}
 			}
 
 			static void input() throws IOException {
-						System.out.print("Enter the no. to be checked to be an Armstrong no.: ");
+						System.out.print("Enter the number until where you want to check for Buzz number: ");
 						numSeries = new int[Integer.parseInt(BR.readLine())];
 						for (int i = 0; i < numSeries.length; i++) {
 									numSeries[i] = i + 1;
 						}
-						luckySeries = numSeries;
-						count = numSeries.length;
-						printLucky();
 			}
 
-			static void computeLuckey() {
+			static void computeLucky() {
 						int n = 2;
 						int c = 0;
+						luckySeries = numSeries;
 						for (count = numSeries.length; count >= n; n++) {
-									System.out.println("ok");
 									c = 0;
 									for (int i = 0; i < count; i++) {
-												System.out.println("i%n = " + (i % n));
 												if (((i + 1) % n) != 0) {
 															luckySeries[c] = numSeries[i];
 															c++;
 												}
 									}
 									count = c;
-									System.out.println("count: " + count);
-									printLucky();
 									numSeries = luckySeries;
 						}
 			}
 
 			static void printLucky() {
 						System.out.println("Lucky Numbers: ");
-						System.out.println(Arrays.toString(luckySeries));
 						System.out.print(luckySeries[0]);
 						for (int i = 1; i < count; i++) {
 									System.out.print(", " + luckySeries[i]);
-
 						}
+						System.out.println();
 			}
 }

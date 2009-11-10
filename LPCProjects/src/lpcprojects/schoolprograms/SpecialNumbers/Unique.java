@@ -25,12 +25,20 @@ public class Unique {
 									} else {
 												System.out.println("The number is not a Unique number.");
 									}
-									System.out.println();
-									System.out.println("Do you want to continue?(yes/no)");
-									if (BR.readLine().equalsIgnoreCase("no")) {
-												break;
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
 									}
-									System.out.println();
 						}
 			}
 
@@ -43,7 +51,6 @@ public class Unique {
 			 * Check weather the no. is a Unique Number or not
 			 * and returns the corresponding boolean value.<tr>
 			 * A number is Unique Number, if any digit is not repeated in it.
-			 * @param n - The number to be checked
 			 * @return boolean value i.e. the no. is unique or not
 			 */
 			public static boolean isUnique() {

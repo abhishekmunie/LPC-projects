@@ -25,12 +25,20 @@ public class Special {
 									} else {
 												System.out.println("The number is not a Special number.");
 									}
-									System.out.println();
-									System.out.println("Do you want to continue?(yes/no)");
-									if (BR.readLine().equalsIgnoreCase("no")) {
-												break;
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
 									}
-									System.out.println();
 						}
 			}
 
@@ -42,16 +50,16 @@ public class Special {
 			/**
 			 * Check weather the no. is a Special Number or not
 			 * and returns the corresponding boolean value.<tr>
-			 * A number is Special Number, when sum of Factorial of its digits is equal to the number.
-			 * @param n - The number to be checked
+			 * A number is Special Number, when
+			 * sum of Factorial of its digits is equal to the number.
 			 * @return boolean value i.e. the no. is special or not
 			 */
 			public static boolean isSpecial() {
 						long sum = 0;
 						int n = num;
 						while (n >= 1) {
-									 sum += getFactorial(n%10);
-										n /= 10;
+									sum += getFactorial(n % 10);
+									n /= 10;
 						}
 						if (sum == num) {
 									return true;
@@ -64,7 +72,6 @@ public class Special {
 			 * Returns the factorial of the number.
 			 * @param num
 			 * @return int of getFactorial
-			 * @throws IllegalNumberException
 			 */
 			public static long getFactorial(int num) {
 						if (num == 0) {

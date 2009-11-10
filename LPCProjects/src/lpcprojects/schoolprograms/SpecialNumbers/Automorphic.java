@@ -21,16 +21,24 @@ public class Automorphic {
 						for (;;) {
 									input();
 									if (isAutomorphic()) {
-												System.out.println("The number is a Automorphic number.");
+												System.out.println("The number is an Automorphic number.");
 									} else {
-												System.out.println("The number is not a Automorphic number.");
+												System.out.println("The number is not an Automorphic number.");
 									}
-									System.out.println();
-									System.out.println("Do you want to continue?(yes/no)");
-									if (BR.readLine().equalsIgnoreCase("no")) {
-												break;
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
 									}
-									System.out.println();
 						}
 			}
 
@@ -43,12 +51,9 @@ public class Automorphic {
 			 * Check weather the no. is a Automorphic Number or not
 			 * and returns the corresponding boolean value.<tr>
 			 *
-			 * @param n - The number to be checked
 			 * @return boolean value i.e. the no. is Automorphic or not
 			 */
 			public static boolean isAutomorphic() {
-						int n = num;
-						return (Math.pow(num, 2) % 10 == n);
+						return (Math.pow(num, 2) % 10 == num);
 			}
 }
-

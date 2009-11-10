@@ -25,12 +25,20 @@ public class Perfect {
 									} else {
 												System.out.println("The number is not a Perfect number.");
 									}
-									System.out.println();
-									System.out.println("Do you want to continue?(yes/no)");
-									if (BR.readLine().equalsIgnoreCase("no")) {
-												break;
+									for (;;) {
+												System.out.println();
+												System.out.println("Do you want to continue? (yes/no)");
+												String c = BR.readLine();
+												System.out.println();
+												if (c.equalsIgnoreCase("yes")) {
+															break;
+												} else if (c.equalsIgnoreCase("no")) {
+															System.exit(0);
+												} else {
+															System.out.println("Invalid Entry.\n");
+															continue;
+												}
 									}
-									System.out.println();
 						}
 			}
 
@@ -43,7 +51,6 @@ public class Perfect {
 			 * Checks that ihe number passed to it is a Perfect Number or not
 			 * and returns the corresponding boolean value.<tr>
 			 * A number is perfect if the sum of its factors is equal to the number.
-			 * @param num - The number to be checked
 			 * @return
 			 */
 			public static boolean isPerfect() {
