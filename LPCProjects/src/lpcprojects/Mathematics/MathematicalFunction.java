@@ -131,7 +131,7 @@ public class MathematicalFunction {
 //        return A;
 //    }
     /**
-     * Returns the getFactorial of the number.
+     * Returns the factorial of the number.
      * @param num
      * @return int of getFactorial
      * @throws IllegalNumberException
