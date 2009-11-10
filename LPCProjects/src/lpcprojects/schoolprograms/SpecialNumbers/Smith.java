@@ -94,9 +94,9 @@ public class Smith {
         System.out.println(" = " + sumOfDigits);
         System.out.println();
         if (sum == sumOfDigits) {
-            System.out.println("The no. is a smith number.");
+            System.out.println("The number is a smith number.");
         } else {
-            System.out.println("The no. is not a smith number.");
+            System.out.println("The number is not a smith number.");
         }
         System.out.println();
     }

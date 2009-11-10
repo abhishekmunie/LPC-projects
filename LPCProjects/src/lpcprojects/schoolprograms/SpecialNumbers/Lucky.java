@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class Lucky {
 
-			static int num;
+			static int count;
 			static int[] numSeries, luckySeries;
 			static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
@@ -21,7 +21,7 @@ public class Lucky {
 									input();
 									computeLuckey();
 									System.out.println();
-									System.out.println("Lucky Numbers: " + Arrays.toString(luckySeries));
+									printLucky();
 									System.out.println();
 									System.out.println("Do you want to continue?(yes/no)");
 									if (BR.readLine().equalsIgnoreCase("no")) {
@@ -37,17 +37,38 @@ public class Lucky {
 						for (int i = 0; i < numSeries.length; i++) {
 									numSeries[i] = i + 1;
 						}
+						luckySeries = numSeries;
+						count = numSeries.length;
+						printLucky();
 			}
 
 			static void computeLuckey() {
-						int n = 1;
-						for (numSeries = luckySeries; luckySeries.length < n; n++) {
-									luckySeries = new int[luckySeries.length * (1 - (1 / n))];
-									for (int i = 1; i < numSeries.length; i++) {
-												if (i % n != 0) {
-															luckySeries[i] = numSeries[i];
+						int n = 2;
+						int c = 0;
+						for (count = numSeries.length; count >= n; n++) {
+									System.out.println("ok");
+									c = 0;
+									for (int i = 0; i < count; i++) {
+												System.out.println("i%n = " + (i % n));
+												if (((i + 1) % n) != 0) {
+															luckySeries[c] = numSeries[i];
+															c++;
 												}
 									}
+									count = c;
+									System.out.println("count: " + count);
+									printLucky();
+									numSeries = luckySeries;
+						}
+			}
+
+			static void printLucky() {
+						System.out.println("Lucky Numbers: ");
+						System.out.println(Arrays.toString(luckySeries));
+						System.out.print(luckySeries[0]);
+						for (int i = 1; i < count; i++) {
+									System.out.print(", " + luckySeries[i]);
+
 						}
 			}
 }
