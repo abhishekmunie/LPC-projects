@@ -25,6 +25,7 @@ public class InputTest {
         int i1 = Integer.parseInt(b.readLine());
         char c = b.readLine().charAt(0);
         int i2 = Integer.parseInt(b.readLine());
+
     }
 
 }
