@@ -29,7 +29,7 @@ public class NumberPattern2 {
 	 }
 
 	 static void input() throws IOException {
-			System.out.print("Enter the number of rows until where the pattern has to be printed: ");
+			System.out.print("Enter the number until where the pattern has to be printed: ");
 			num = Integer.parseInt(BR.readLine());
 	 }
 
