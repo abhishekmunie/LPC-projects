@@ -3,7 +3,12 @@ package lpcprojects.schoolprograms.Pattern;
 import java.io.*;
 
 /**
- *
+ * Prints a patern in following way:
+ *     1
+ *    2 2
+ *   3 3 3
+ *  4 4 4 4
+ * 5 5 5 5 5
  * @author Abhishek
  */
 public class NumberPattern1 {
@@ -35,8 +40,11 @@ public class NumberPattern1 {
 
 	 static void printSeries(int num) {
 			for (int i = 1; i <= num; i++) {
+				 for (int j = 0; j < num - i; j++) {
+						System.out.print(" ");
+				 }
 				 for (int j = 0; j < i; j++) {
-						System.out.print(i + "\t");
+						System.out.print(i + " ");
 				 }
 						System.out.println();
 			}

@@ -57,7 +57,7 @@ public class MathematicalFunction {
      */
     public static int[] getPrimeFactors(int num) throws IllegalNumberException {
         if (num < 0) {
-            throw new IllegalNumberException("The no. whose factorial has to be found is less than one");
+            throw new IllegalNumberException("The no. whose prime factors have to be found should not be less than one.");
         }
         int c = 0;
         int[] primeFactors = new int[num / 2];
@@ -138,7 +138,7 @@ public class MathematicalFunction {
      */
     public static long getFactorial(long num) throws IllegalNumberException {
         if (num < 0) {
-            throw new IllegalNumberException("The no. whose factorial has to be found is less than one");
+            throw new IllegalNumberException("The no. whose factorial has to be found sould not be less than one.");
         }
         if (num == 0) {
             return 1;
