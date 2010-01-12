@@ -12,7 +12,6 @@ public class SumOfContigous {
 
 			static int num;
 			static int s;
-			static int j;
 			static BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
 
 			/**
@@ -46,9 +45,9 @@ public class SumOfContigous {
 			}
 
 			public static void compute(int n) {
-						for (int i = 0; i < n; i++) {
+						for (int i = 1; i < n; i++) {
 									s = 0;
-									for (j = i; j < n; j++) {
+									for (int j = i; j < n; j++) {
 												s += j;
 												if (s == n) {
 															for (int k = i; k <= j; k++) {

@@ -55,11 +55,10 @@ public class Palindrome {
 			 * @return boolean value i.e. the no. is palindrome or not
 			 */
 			public static boolean isPalindrome() {
-						int Palindrome = 0, d;
+						int Palindrome = 0;
 						int n = num;
 						while (n > 0) {
-									d = n % 10;
-									Palindrome = Palindrome * 10 + d;
+									Palindrome = (Palindrome * 10) + (n % 10);
 									n /= 10;
 						}
 						if (Palindrome == num) {

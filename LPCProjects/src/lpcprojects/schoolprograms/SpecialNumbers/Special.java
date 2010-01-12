@@ -71,7 +71,7 @@ public class Special {
 			/**
 			 * Returns the factorial of the number.
 			 * @param num
-			 * @return int of getFactorial
+			 * @return Factorial of the number passed as num
 			 */
 			public static long getFactorial(int num) {
 						if (num == 0) {
