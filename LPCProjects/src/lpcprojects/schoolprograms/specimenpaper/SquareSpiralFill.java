@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package lpcprojects.schoolprograms.specimenpaper;
 
 import java.io.*;
@@ -27,7 +23,7 @@ public class SquareSpiralFill {
 	 }
 
 	 static void input() throws IOException {
-			System.out.print("Enter the number of rows: ");
+			System.out.print("Enter the value of N: ");
 			N = Integer.parseInt(bufferedReader.readLine());
 			Spiral = new int[N][N];
 	 }
