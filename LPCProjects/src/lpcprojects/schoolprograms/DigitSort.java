@@ -36,7 +36,7 @@ public class DigitSort {
 						for (int i = 0; i < Dsort.length; i++) {
 									pos = i;
 									for (int j = i; j < Dsort.length; j++) {
-												if (Dsort[j] < Dsort[i]) {
+												if (Dsort[j] < Dsort[pos]) {
 															pos = j;
 												}
 									}

@@ -2,17 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lpcprojects.schoolprograms;
+package lpcprojects.schoolprograms.specimenpaper;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 /**
  *
  * @author Abhishek
  */
-public class Date_Specimen {
+public class NumberToDate {
 
 	 static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	 static int nD;
@@ -107,9 +105,9 @@ public class Date_Specimen {
 			System.out.print(day);
 			if (day % 10 == 1) {
 				 System.out.print("st");
-			} else if (day % 10 == 1) {
+			} else if (day % 10 == 2) {
 				 System.out.print("nd");
-			} else if (day % 10 == 1) {
+			} else if (day % 10 == 3) {
 				 System.out.print("rd");
 			} else {
 				 System.out.print("th");
