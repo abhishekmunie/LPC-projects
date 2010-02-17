@@ -27,7 +27,7 @@ public class VowelSort {
 	 }
 
 	 static void input() throws IOException {
-			System.out.println("");
+			System.out.print("INPUT: ");
 			str = bufferedReader.readLine();
 	 }
 
@@ -52,15 +52,45 @@ public class VowelSort {
 //	 }
 	 static void vowelSort() {
 			for (StringTokenizer stringTokenizer1 = new StringTokenizer(str, ".,!?", true); stringTokenizer1.hasMoreTokens();) {
-				 sort(stringTokenizer1.nextToken());
+				 System.out.print(SelectionSort(getTokenArray(stringTokenizer1.nextToken())));
 			}
 	 }
 
-	 static void sort(String s) {
-			StringTokenizer stringTokenizer = new StringTokenizer(s, " \t\n\r\f", true);
-			while (stringTokenizer.hasMoreTokens()) {
-				 String token = stringTokenizer.nextToken();
-
+	 static String SelectionSort(String[] Sorted) {
+			int minP;
+			String temp;
+			for (int i = 0; i < Sorted.length; i++) {
+				 minP = i;
+				 for (int j = i + 1; j < Sorted.length; j++) {
+						if (Sorted[j].compareTo(Sorted[minP]) < 0) {
+							 minP = j;
+						}
+				 }
+				 temp = Sorted[i];
+				 Sorted[i] = Sorted[minP];
+				 Sorted[minP] = temp;
 			}
+			String s = new String();
+			for (int i = 0; i < Sorted.length; i++) {
+				 s += Sorted[i] + " ";
+//				 if (i < Sorted.length - 1) {
+//						s += " ";
+//				 }
+			}
+			return s;
+	 }
+
+	 static String[] getTokenArray(String toBeSorted) {
+			System.out.println("~~" + toBeSorted);
+			StringTokenizer tokenizer = new StringTokenizer(toBeSorted, " \t\n\r\f", true);
+			String[] Sorted = new String[(int)Math.ceil(tokenizer.countTokens() / 2)];
+			for (int i = 0; tokenizer.hasMoreTokens(); i++) {
+				 Sorted[i] = tokenizer.nextToken();
+				 if (tokenizer.hasMoreTokens()) {
+						Sorted[i] += tokenizer.nextToken();
+				 }
+				 System.out.println("~~~" + Sorted[i]);
+			}
+			return Sorted;
 	 }
 }

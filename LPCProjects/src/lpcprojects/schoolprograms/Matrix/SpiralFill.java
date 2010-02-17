@@ -14,7 +14,7 @@ import java.io.*;
 public class SpiralFill {
 
 	 static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-	 static int n;
+	 static int N;
 	 static int[][] Spiral;
 
 	 /**
@@ -23,19 +23,21 @@ public class SpiralFill {
 	  */
 	 public static void main(String[] args) throws IOException {
 			input();
-			inputSpiral();
+			System.out.println("Top Left Clockwise Spiral Fill:");
+			TopLeftClockwiseSpiral();
+			display();
+			System.out.println("\nTop Left Counter clockwise Spiral Fill:");
+			TopLeftCounterclockwiseSpiral();
 			display();
 	 }
 
 	 static void input() throws IOException {
-			System.out.print("Enter the number of rows: ");
-			int r = Integer.parseInt(bufferedReader.readLine());
-			System.out.print("Enter the number of columns: ");
-			int c = Integer.parseInt(bufferedReader.readLine());
-			Spiral = new int[r][c];
+			System.out.print("Enter the value of N: ");
+			N = Integer.parseInt(bufferedReader.readLine());
+			Spiral = new int[N][N];
 	 }
 
-	 static void inputSpiral() throws IOException {
+	 static void TopLeftClockwiseSpiral() throws IOException {
 			int num = 1;
 			for (int i = 0; i < Spiral.length; i++) {
 				 for (int j = i; j < Spiral[i].length - i; j++) {
@@ -44,11 +46,29 @@ public class SpiralFill {
 				 for (int k = i + 1; k < Spiral.length - i; k++) {
 						Spiral[k][Spiral[i].length - 1 - i] = num++;
 				 }
-				 for (int l = Spiral[Spiral.length - 1 - i].length - i - 2; l >= i; l--) {
+				 for (int m = Spiral.length - i - 1; m > i; m--) {
+						Spiral[m][i] = num++;
+				 }
+				 for (int l = Spiral[Spiral.length - 1 - i].length - i - 2; l > i; l--) {
 						Spiral[Spiral.length - 1 - i][l] = num++;
 				 }
-				 for (int m = Spiral.length - i - 2; m > i; m--) {
+			}
+	 }
+
+	 static void TopLeftCounterclockwiseSpiral() throws IOException {
+			int num = 1;
+			for (int i = 0; i < Spiral.length; i++) {
+				 for (int m = i; m <= Spiral.length - i - 1; m++) {
 						Spiral[m][i] = num++;
+				 }
+				 for (int l = i + 1; l <= Spiral[Spiral.length - 1 - i].length - 1 - i; l++) {
+						Spiral[Spiral.length - 1 - i][l] = num++;
+				 }
+				 for (int k = Spiral.length - 2 - i; k >= i; k--) {
+						Spiral[k][Spiral.length - 1 - i] = num++;
+				 }
+				 for (int j = Spiral[i].length - 2 - i; j > i; j--) {
+						Spiral[i][j] = num++;
 				 }
 			}
 	 }
