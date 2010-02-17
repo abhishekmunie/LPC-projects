@@ -1,4 +1,4 @@
-package lpcprojects.schoolprograms.Matrix;
+package lpcprojects.schoolprograms.preboard;
 
 import java.io.*;
 
@@ -19,11 +19,12 @@ public class BorderOperation {
 	  */
 	 public static void main(String[] args) throws IOException {
 			input();
+			System.out.println("Original Matrix: ");
+			display();
+			sortBorder();
+			System.out.println("Sorted Matrix: ");
 			display();
 			printBorderElement();
-			printInnerElement();
-			sortBorder();
-			display();
 	 }
 
 	 static void input() throws IOException {
@@ -100,27 +101,11 @@ public class BorderOperation {
 			System.out.println();
 	 }
 
-	 static void printInnerElement() {
-			System.out.println("Inner Elements: ");
-			for (int i = 0; i < r; i++) {
-				 for (int j = 0; j < c; j++) {
-						if (!isBorderElement(i, j)) {
-							 System.out.print(Matrix[i][j] + "\t");
-						} else {
-							 System.out.print(" \t");
-						}
-				 }
-				 System.out.println();
-			}
-			System.out.println();
-	 }
-
 	 static boolean isBorderElement(int i, int j) {
 			return ((i == 0) || (i == (r - 1)) || (j == 0) || (j == (c - 1)));
 	 }
 
 	 static void display() {
-			System.out.println("Matrix: ");
 			for (int i = 0; i < Matrix.length; i++) {
 				 for (int j = 0; j < Matrix[i].length; j++) {
 						System.out.print(Matrix[i][j] + "\t");
