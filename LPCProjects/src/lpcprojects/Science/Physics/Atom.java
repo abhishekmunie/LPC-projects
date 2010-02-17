@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  */
 public 
 
- class Atoms {
+ class Atom {
 
     /**
      * no. of electron in atom.

@@ -1,14 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package lpcprojects.schoolprograms.preboard;
 
 import java.io.*;
 
 /**
- *
- * @author Abhishek
+ * @author Abhishek Munie
  */
 public class NumberToDate {
 
@@ -20,13 +15,19 @@ public class NumberToDate {
 	 static int year;
 
 	 /**
+	  * Main Method
 	  * @param args the command line arguments
+	  * @throws IOException
 	  */
 	 public static void main(String[] args) throws IOException {
 			input();
 			convert();
 	 }
 
+	 /**
+	  * Acceps from user the date in six digit format.
+	  * @throws IOException
+	  */
 	 static void input() throws IOException {
 			System.out.print("Enter a six digit number: ");
 			nD = Integer.parseInt(bufferedReader.readLine());
@@ -36,6 +37,9 @@ public class NumberToDate {
 			}
 	 }
 
+	 /**
+	  * Converts the date from six digit form to full form.
+	  */
 	 static void convert() {
 			year = nD % 100;
 			nD /= 100;
@@ -116,6 +120,10 @@ public class NumberToDate {
 			System.out.println("VALID DATE");
 	 }
 
+	 /**
+	  * Checks if the year is leap year.
+	  * @return Returns true if the year is a leap year else returns false.
+	  */
 	 static boolean isLeapYear() {
 			if (year % 4 == 0) {
 				 return true;

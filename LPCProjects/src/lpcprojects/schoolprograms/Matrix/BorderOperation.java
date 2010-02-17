@@ -3,8 +3,9 @@ package lpcprojects.schoolprograms.Matrix;
 import java.io.*;
 
 /**
- *
- * @author Abhishek
+ * The class demonstrates the operation involving border of a matrix.
+ * @author Abhishek Munie
+ * @see lpcprojects.Mathematics.Matrix
  */
 public class BorderOperation {
 
@@ -40,10 +41,17 @@ public class BorderOperation {
 			}
 	 }
 
+	 /**
+	  * Returns the length of the border of matrix.
+	  * @return The length of the border of matrix.
+	  */
 	 static int getBorderLenght() {
 			return ((r * 2) + (c * 2) - 4);
 	 }
 
+	 /**
+	  * Sorts the border elements of the matrix.
+	  */
 	 static void sortBorder() {
 			int minP, temp;
 			for (int i = 0; i < getBorderLenght(); i++) {
@@ -59,6 +67,12 @@ public class BorderOperation {
 			}
 	 }
 
+	 /**
+	  * Returns the Border Element at position pos while considering
+	  * the border to be starting at top left corner and filled clockwise.
+	  * @param pos position of Border Element.
+	  * @return Border Element at position pos.
+	  */
 	 static int getBorderElement(int pos) {
 			if (pos < c) {
 				 return Matrix[0][pos];
@@ -73,6 +87,12 @@ public class BorderOperation {
 			}
 	 }
 
+	 /**
+	  * Sets the value of Border Element at position pos while considering
+	  * the border to be starting at top left corner and filled clockwise.
+	  * @param num value to be set.
+	  * @param pos position of Border Element.
+	  */
 	 static void setBorderElement(int num, int pos) {
 			if (pos <= (c - 1)) {
 				 Matrix[0][pos] = num;
@@ -85,6 +105,9 @@ public class BorderOperation {
 			}
 	 }
 
+	 /**
+	  * Prints the border elements of matrix.
+	  */
 	 static void printBorderElement() {
 			System.out.println("Border Elements: ");
 			for (int i = 0; i < r; i++) {
@@ -100,6 +123,9 @@ public class BorderOperation {
 			System.out.println();
 	 }
 
+	 /**
+	  * Prints the inner elements of matrix.
+	  */
 	 static void printInnerElement() {
 			System.out.println("Inner Elements: ");
 			for (int i = 0; i < r; i++) {
@@ -115,10 +141,19 @@ public class BorderOperation {
 			System.out.println();
 	 }
 
+	 /**
+	  * Checks if the element is a border element or not.
+	  * @param i row no. of element
+	  * @param j column no. of element
+	  * @return
+	  */
 	 static boolean isBorderElement(int i, int j) {
 			return ((i == 0) || (i == (r - 1)) || (j == 0) || (j == (c - 1)));
 	 }
 
+	 /**
+	  * Displays the whole matrix in matrix form.
+	  */
 	 static void display() {
 			System.out.println("Matrix: ");
 			for (int i = 0; i < Matrix.length; i++) {
