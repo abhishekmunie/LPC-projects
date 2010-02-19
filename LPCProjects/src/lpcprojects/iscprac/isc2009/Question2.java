@@ -33,10 +33,10 @@ public class Question2 {
 	  */
 	 public static void main(String[] args) throws IOException {
 			input();
-			System.out.println("Original Matrix: ");
+			System.out.println("ORIGINAL MATRIX: ");
 			display();
 			sortBorder();
-			System.out.println("Sorted Matrix: ");
+			System.out.println("REARRANGED MATRIX: ");
 			display();
 			printBorderElement();
 	 }
@@ -127,7 +127,7 @@ public class Question2 {
 	  * Prints the border elements of matrix.
 	  */
 	 static void printBorderElement() {
-			System.out.println("Border Elements: ");
+			System.out.println("BOUNDARY ELEMENTS: ");
 			for (int i = 0; i < M; i++) {
 				 for (int j = 0; j < N; j++) {
 						if (isBorderElement(i, j)) {
@@ -139,7 +139,7 @@ public class Question2 {
 				 }
 				 System.out.println();
 			}
-			System.out.println("Sum of outer row amd column elements = " + sumOuter);
+			System.out.println("SUM OF THE OUTER ROW AND COLUNM ELEMENTS = " + sumOuter);
 			System.out.println();
 	 }
 

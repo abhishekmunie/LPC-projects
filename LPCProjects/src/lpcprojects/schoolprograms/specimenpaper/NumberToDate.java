@@ -16,7 +16,8 @@ public class NumberToDate {
 	 static int year;
 
 	 /**
-	  * @param args the command line arguments
+		* @param args the command line arguments
+		* @throws IOException 
 	  */
 	 public static void main(String[] args) throws IOException {
 			input();
