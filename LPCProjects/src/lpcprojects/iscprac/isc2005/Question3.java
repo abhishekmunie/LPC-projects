@@ -8,16 +8,17 @@ import java.io.*;
  */
 public class Question3 {
 
-		static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    /**
-		 * Main Method
-     * @param args the command line arguments
-		 * @throws IOException
-     */
-    public static void main(String[] args) throws IOException {
-				input();
-				display();
-    }
+	 static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+	 /**
+	  * Main Method
+	  * @param args the command line arguments
+	  * @throws IOException
+	  */
+	 public static void main(String[] args) throws IOException {
+			input();
+			display();
+	 }
 
 	 /**
 	  * Accepts  from the user.

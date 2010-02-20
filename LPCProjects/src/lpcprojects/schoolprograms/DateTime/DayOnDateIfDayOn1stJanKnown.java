@@ -1,4 +1,4 @@
-package lpcprojects.iscprac.isc2007;
+package lpcprojects.schoolprograms.DateTime;
 
 import java.io.*;
 import java.util.GregorianCalendar;
@@ -7,7 +7,7 @@ import java.util.GregorianCalendar;
  *
  * @author Abhishek
  */
-public class Question1 {
+public class DayOnDateIfDayOn1stJanKnown {
 
 	 static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	 static String date;
