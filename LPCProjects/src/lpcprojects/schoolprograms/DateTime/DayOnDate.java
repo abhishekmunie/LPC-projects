@@ -22,9 +22,8 @@ public class DayOnDate {
 	  * @throws IOException
 	  */
 	 public static void main(String[] args) throws IOException {
-			Calendar c = new GregorianCalendar();
-//			input();
-//			compute();
+			input();
+			compute();
 	 }
 
 	 /**
@@ -46,8 +45,57 @@ public class DayOnDate {
 			int idxm = date.indexOf('/', (idxd + 1));
 			dd = Integer.parseInt(date.substring((idxd + 1), idxm));
 			yyyy = Integer.parseInt(date.substring(idxm + 1));
+			int maxDay = 0;
+			switch (mm) {
+				 case 1:
+						maxDay = 31;
+						break;
+				 case 2:
+						if (new GregorianCalendar().isLeapYear(yyyy)) {
+							 maxDay = 29;
+						} else {
+							 maxDay = 28;
+						}
+						break;
+				 case 3:
+						maxDay = 31;
+						break;
+				 case 4:
+						maxDay = 30;
+						break;
+				 case 5:
+						maxDay = 31;
+						break;
+				 case 6:
+						maxDay = 30;
+						break;
+				 case 7:
+						maxDay = 31;
+						break;
+				 case 8:
+						maxDay = 31;
+						break;
+				 case 9:
+						maxDay = 30;
+						break;
+				 case 10:
+						maxDay = 31;
+						break;
+				 case 11:
+						maxDay = 30;
+						break;
+				 case 12:
+						maxDay = 31;
+						break;
+				 default:
+						System.out.println("Invalid Month!");
+						System.exit(0);
+			}
+			if (dd > maxDay) {
+				 System.out.println("Invalid Day!");
+				 System.exit(0);
+			}
 			Calendar c = new GregorianCalendar();
-			c.getMaximum(Calendar.DAY_OF_MONTH);
 			c.set(yyyy, mm, dd);
 			System.out.print("Day on " + date + " : ");
 			switch (c.get(Calendar.DAY_OF_WEEK)) {

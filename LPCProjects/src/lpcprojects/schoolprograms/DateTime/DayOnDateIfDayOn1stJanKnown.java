@@ -139,7 +139,7 @@ public class DayOnDateIfDayOn1stJanKnown {
 						maxDay = 31;
 						break;
 				 default:
-						System.out.println("INVALID DATE");
+						System.out.println("Invalid Month!");
 						System.exit(0);
 			}
 			if (dd > maxDay) {

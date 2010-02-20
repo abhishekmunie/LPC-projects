@@ -4,7 +4,6 @@
  */
 package lpcprojects.schoolprograms.Matrix;
 
-import lpcprojects.schoolprograms.specimenpaper.*;
 import java.io.*;
 
 /**
@@ -73,7 +72,9 @@ public class SpiralFill {
 			}
 	 }
 
-	 static void InToOut
+	 static void InToOut() {
+	 }
+
 	 static void display() {
 			for (int i = 0; i < Spiral.length; i++) {
 				 for (int j = 0; j < Spiral[i].length; j++) {
