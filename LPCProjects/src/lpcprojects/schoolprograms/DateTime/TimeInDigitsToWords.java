@@ -44,29 +44,37 @@ public class TimeInDigitsToWords {
 	 static void display() {
 			if ((hr < 1) || (hr > 12)) {
 				 System.out.println("Incorrect");
+				 return;
 			}
 			if ((min < 0) || (min > 59)) {
 				 System.out.println("Incorrect");
+				 return;
 			}
-			if (min == 15) {
-				 System.out.println("Quarter past ");
+			if (min == 0) {
+				 System.out.println(toWords2(hr) + " o'clock");
+				 return;
+			} else if (min == 15) {
+				 System.out.print("Quarter past ");
 			} else if (min < 30) {
-				 System.out.println(toWords2(min) + " past ");
+				 System.out.print(toWords2(min) + " past ");
 			} else if (min == 30) {
-				 System.out.println("Half past");
-			} else if (min > 30) {
-				 System.out.println(toWords2(min) + " to ");
-				 hr++;
+				 System.out.print("Half past");
 			} else if (min == 45) {
-				 System.out.println("Quarter to ");
+				 System.out.print("Quarter to ");
+				 hr++;
+			} else if (min > 30) {
+				 System.out.print(toWords2(min) + " to ");
 				 hr++;
 			}
-			System.out.print(toWords2(((hr - 1) % 12) + 1));
+			if (hr == 13) {
+				 hr = 1;
+			}
+			System.out.println(toWords2(hr));
 	 }
 
 	 private static String toWords2(int num) {
 			if (num < 10) {
-				 toWords1(num);
+				 return toWords1(num);
 			} else if (num < 20) {
 				 switch (num) {
 						case 10:
