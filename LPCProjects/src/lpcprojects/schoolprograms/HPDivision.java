@@ -1,9 +1,8 @@
-package lpcprojects.Mathematics;
+package lpcprojects.schoolprograms;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
 
 public class HPDivision {
 
@@ -22,7 +21,6 @@ public class HPDivision {
 				 divide(num, div, deci);
 				 System.out.println();
 				 System.out.println("Using BigInteger: ");
-				 divide(BigInteger.valueOf(num), BigInteger.valueOf(div), BigInteger.valueOf(deci));
 				 System.out.println();
 				 for (;;) {
 						System.out.println();
@@ -82,50 +80,6 @@ public class HPDivision {
 				 System.out.print(d);
 				 b = c % divisor;
 				 f++;
-			}
-	 }
-
-	 public static void divide(BigInteger dividend, BigInteger divisor, BigInteger decimalPlace) {
-			BigInteger a, b, c, d;
-			boolean h = false;
-			boolean r = false;
-			BigInteger f = BigInteger.ONE;
-			System.out.println(dividend + " divided by " + divisor + " to " + decimalPlace + " decimal place is:");
-			for (;;) {
-				 if (dividend.compareTo(divisor) <= -1) {
-						if (!r) {
-							 System.out.print("O.");
-						} else {
-							 System.out.print("0");
-							 dividend = dividend.multiply(BigInteger.TEN);
-							 h = r = true;
-						}
-				 } else {
-						break;
-				 }
-			}
-			a = dividend.divide(divisor);
-			if (!h) {
-				 System.out.print(a + ".");
-			} else {
-				 System.out.print(a);
-			}
-			b = dividend.remainder(divisor);
-			while (f.compareTo(decimalPlace) <= 0) {
-				 c = b.multiply(BigInteger.TEN);
-				 for (;;) {
-						if ((c.compareTo(divisor) < 0) && (f.compareTo(decimalPlace) < 0)) {
-							 c = c.multiply(BigInteger.TEN);
-							 System.out.print("0");
-							 f = f.add(BigInteger.ONE);
-						} else {
-							 break;
-						}
-				 }
-				 d = c.divide(divisor);
-				 System.out.print(d);
-				 b = c.remainder(divisor);
-				 f = f.add(BigInteger.ONE);
 			}
 	 }
 }

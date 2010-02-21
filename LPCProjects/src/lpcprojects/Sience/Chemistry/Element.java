@@ -2,18 +2,32 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lpcprojects.Science.Chemistry;
+package lpcprojects.Sience.Chemistry;
+
+import lpcprojects.Sience.Physics.Atom;
 
 /**
  *
  * @author Abhishek
  */
-public class PeriodicTable {
+public class Element {
 
 	 /**
-		*
-		*/
-	 Element[] elements = new Element[]{};
+	  *
+	  */
+	 String Symbol;
+	 /**
+	  *
+	  */
+	 Atom Atom;
+	 /**
+	  *
+	  */
+	 int Period;
+	 /**
+	  *
+	  */
+	 int Group;
 
 	 /**
 	  * @param args the command line arguments

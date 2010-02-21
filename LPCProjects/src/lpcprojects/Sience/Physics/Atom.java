@@ -1,6 +1,6 @@
-package lpcprojects.Science.Physics;
+package lpcprojects.Sience.Physics;
 
-import lpcprojects.Science.Constants;
+import lpcprojects.Sience.Constants;
 import java.math.BigDecimal;
 
 /**
