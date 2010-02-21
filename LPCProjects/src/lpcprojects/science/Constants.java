@@ -1,4 +1,4 @@
-package lpcprojects.Sience;
+package lpcprojects.science;
 
 import java.math.BigDecimal;
 

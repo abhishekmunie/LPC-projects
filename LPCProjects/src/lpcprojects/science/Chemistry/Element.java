@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lpcprojects.Sience.Chemistry;
+package lpcprojects.science.Chemistry;
 
-import lpcprojects.Sience.Physics.Atom;
+import lpcprojects.science.Physics.Atom;
 
 /**
  *

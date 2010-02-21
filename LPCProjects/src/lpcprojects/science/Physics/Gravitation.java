@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package lpcprojects.Sience.Physics;
+package lpcprojects.science.Physics;
 
 /**
  *
