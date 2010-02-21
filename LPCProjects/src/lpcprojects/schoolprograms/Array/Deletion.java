@@ -19,7 +19,7 @@ public class Deletion {
 	  */
 	 public static void main(String[] args) throws IOException {
 			enterArray();
-			insert();
+			delete();
 			display();
 	 }
 
@@ -38,7 +38,7 @@ public class Deletion {
 			POS = Integer.parseInt(BR.readLine()) - 1;
 	 }
 
-	 static void insert() throws IOException {
+	 static void delete() throws IOException {
 			input();
 			COUNT = POS;
 			while (COUNT < (SIZE - 1)) {

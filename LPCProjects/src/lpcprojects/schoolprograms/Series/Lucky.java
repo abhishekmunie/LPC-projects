@@ -1,4 +1,4 @@
-package lpcprojects.schoolprograms.SpecialNumbers;
+package lpcprojects.schoolprograms.Series;
 
 import java.io.*;
 
