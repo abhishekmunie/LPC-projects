@@ -33,8 +33,10 @@ public class DifferenceBetweenDates {
 			System.out.println(c.isLenient());
 			System.out.print("Enter First Date (mm/dd/yyyy): ");
 			date1 = getDate(bufferedReader.readLine());
+//			date1 = getDate("06/18/2009");
 			System.out.print("Enter Second Date (mm/dd/yyyy): ");
 			date2 = getDate(bufferedReader.readLine());
+//			date2 = getDate("06/18/2010");
 	 }
 
 	 static Calendar getDate(String date) {
@@ -110,8 +112,24 @@ public class DifferenceBetweenDates {
 	 static void display() {
 			int diff = 0;
 			if (date1.after(date2)) {
-				 diff += date1.get(Calendar.DAY_OF_YEAR);
+				 for (int i = date2.get(Calendar.YEAR); i < date1.get(Calendar.YEAR); i++) {
+						if (new GregorianCalendar().isLeapYear(i)) {
+							 diff += 366;
+						} else {
+							 diff += 365;
+						}
+				 }
+				 diff = diff + date1.get(Calendar.DAY_OF_YEAR) - date2.get(Calendar.DAY_OF_YEAR);
 			} else {
+				 for (int i = date1.get(Calendar.YEAR); i < date2.get(Calendar.YEAR); i++) {
+						if (new GregorianCalendar().isLeapYear(i)) {
+							 diff += 366;
+						} else {
+							 diff += 365;
+						}
+				 }
+				 diff = diff + date2.get(Calendar.DAY_OF_YEAR) - date1.get(Calendar.DAY_OF_YEAR);
 			}
+			System.out.println("Diference of Days: " + diff);
 	 }
 }
