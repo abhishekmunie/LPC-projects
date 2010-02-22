@@ -95,7 +95,6 @@ public class DifferenceBetweenDates {
 						System.out.println("Invalid Month!");
 						System.exit(0);
 			}
-
 			if (dd > maxDay) {
 				 System.out.println("Invalid Day!");
 				 System.exit(0);
@@ -104,9 +103,13 @@ public class DifferenceBetweenDates {
 	 }
 
 	 /**
-	  * Displays .
+	  * Displays the difference of days beteen dates.
 	  */
 	 static void display() {
-
+			int diff = 0;
+			if (date1.after(date2)) {
+				 diff += date1.get(Calendar.DAY_OF_YEAR);
+			} else {
+			}
 	 }
 }
