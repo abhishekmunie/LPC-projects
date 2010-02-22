@@ -31,10 +31,10 @@ public class DifferenceBetweenDates {
 	 static void input() throws IOException {
 			Calendar c = Calendar.getInstance();
 			System.out.println(c.isLenient());
-			System.out.print("Enter First Date (mm/dd/yyyy): ");
+			System.out.print("Enter First Date (dd/mm/yyyy): ");
 			date1 = getDate(bufferedReader.readLine());
 //			date1 = getDate("06/18/2009");
-			System.out.print("Enter Second Date (mm/dd/yyyy): ");
+			System.out.print("Enter Second Date (dd/mm/yyyy): ");
 			date2 = getDate(bufferedReader.readLine());
 //			date2 = getDate("06/18/2010");
 	 }
@@ -44,14 +44,14 @@ public class DifferenceBetweenDates {
 			int mm;
 			int yyyy;
 			int idxd = date.indexOf('/');
-			mm = Integer.parseInt(date.substring(0, idxd));
+			dd = Integer.parseInt(date.substring(0, idxd));
+			int idxm = date.indexOf('/', (idxd + 1));
+			mm = Integer.parseInt(date.substring((idxd + 1), idxm));
 			if ((mm > 12) && (mm
 							< 1)) {
 				 System.out.println("Invalid Month!");
 				 System.exit(0);
 			}
-			int idxm = date.indexOf('/', (idxd + 1));
-			dd = Integer.parseInt(date.substring((idxd + 1), idxm));
 			yyyy = Integer.parseInt(date.substring(idxm + 1));
 			int maxDay = 0;
 			switch (mm) {
