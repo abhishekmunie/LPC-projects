@@ -29,6 +29,8 @@ public class DifferenceBetweenDates {
 	  * @throws IOException
 	  */
 	 static void input() throws IOException {
+			Calendar c = Calendar.getInstance();
+			System.out.println(c.isLenient());
 			System.out.print("Enter First Date (mm/dd/yyyy): ");
 			date1 = getDate(bufferedReader.readLine());
 			System.out.print("Enter Second Date (mm/dd/yyyy): ");

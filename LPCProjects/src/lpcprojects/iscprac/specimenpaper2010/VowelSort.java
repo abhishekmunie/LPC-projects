@@ -3,6 +3,7 @@ package lpcprojects.iscprac.specimenpaper2010;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Enumeration;
 import java.util.StringTokenizer;
 
 /**
@@ -27,29 +28,11 @@ public class VowelSort {
 			str = bufferedReader.readLine();
 	 }
 
-//	 static void vowelSort() {
-//			int bi = 0;
-//			int ei = 0;
-//			for (;;) {
-//				 if (str.indexOf('.', ei) != -1) {
-//						ei = str.indexOf('.', ei);
-//				 } else if (str.indexOf(',', ei) != -1) {
-//						ei = str.indexOf(',', ei);
-//				 } else if (str.indexOf('!', ei) != -1) {
-//						ei = str.indexOf('!', ei);
-//				 } else if (str.indexOf('?', ei) != -1) {
-//						ei = str.indexOf('?', ei);
-//				 } else {
-//						break;
-//				 }
-//				 sort(str.substring(bi, ei));
-//				 bi++;
-//			}
-//	 }
 	 static void vowelSort() {
 			for (StringTokenizer stringTokenizer1 = new StringTokenizer(str, ".,!?", true); stringTokenizer1.hasMoreTokens();) {
-				 System.out.print(SelectionSort(getTokenArray(stringTokenizer1.nextToken()+stringTokenizer1.nextToken())));
+				 System.out.print(SelectionSort(getTokenArray(stringTokenizer1.nextToken())) + stringTokenizer1.nextToken() + " ");
 			}
+			System.out.println();
 	 }
 
 	 static String SelectionSort(String[] Sorted) {
@@ -68,24 +51,19 @@ public class VowelSort {
 			}
 			String s = new String();
 			for (int i = 0; i < Sorted.length; i++) {
-				 s += Sorted[i] + " ";
-//				 if (i < Sorted.length - 1) {
-//						s += " ";
-//				 }
+				 s += Sorted[i];
+				 if (i < Sorted.length - 1) {
+						s += " ";
+				 }
 			}
 			return s;
 	 }
 
 	 static String[] getTokenArray(String toBeSorted) {
-			System.out.println("~~" + toBeSorted);
-			StringTokenizer tokenizer = new StringTokenizer(toBeSorted, " \t\n\r\f", true);
-			String[] Sorted = new String[(int)Math.ceil(tokenizer.countTokens() / 2)];
+			StringTokenizer tokenizer = new StringTokenizer(toBeSorted);
+			String[] Sorted = new String[tokenizer.countTokens()];
 			for (int i = 0; tokenizer.hasMoreTokens(); i++) {
 				 Sorted[i] = tokenizer.nextToken();
-				 if (tokenizer.hasMoreTokens()) {
-						Sorted[i] += tokenizer.nextToken();
-				 }
-				 System.out.println("~~~" + Sorted[i]);
 			}
 			return Sorted;
 	 }

@@ -40,7 +40,7 @@ public class Lucky {
 			}
 
 			static void input() throws IOException {
-						System.out.print("Enter the number until where you want to check for Buzz number: ");
+						System.out.print("Enter the number until where you want to calculate lucky series: ");
 						numSeries = new int[Integer.parseInt(BR.readLine())];
 						for (int i = 0; i < numSeries.length; i++) {
 									numSeries[i] = i + 1;
@@ -65,7 +65,7 @@ public class Lucky {
 			}
 
 			static void printLucky() {
-						System.out.println("Lucky Numbers: ");
+						System.out.println("Lucky Series: ");
 						System.out.print(luckySeries[0]);
 						for (int i = 1; i < count; i++) {
 									System.out.print(", " + luckySeries[i]);
