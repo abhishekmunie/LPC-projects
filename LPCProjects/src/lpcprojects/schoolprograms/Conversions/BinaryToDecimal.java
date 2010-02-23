@@ -47,5 +47,6 @@ public class BinaryToDecimal {
 
     static void display() {
         System.out.println("The decimal equeivalent of binary no. " + num + ", is: " + result);
+//				System.out.println("Correct: " + Integer.);
     }
 }
