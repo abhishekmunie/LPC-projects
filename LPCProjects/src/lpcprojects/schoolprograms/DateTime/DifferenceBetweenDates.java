@@ -47,8 +47,7 @@ public class DifferenceBetweenDates {
 			dd = Integer.parseInt(date.substring(0, idxd));
 			int idxm = date.indexOf('/', (idxd + 1));
 			mm = Integer.parseInt(date.substring((idxd + 1), idxm));
-			if ((mm > 12) && (mm
-							< 1)) {
+			if ((mm > 12) && (mm < 1)) {
 				 System.out.println("Invalid Month!");
 				 System.exit(0);
 			}
