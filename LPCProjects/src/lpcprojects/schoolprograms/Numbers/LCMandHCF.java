@@ -34,7 +34,7 @@ public class LCMandHCF {
         int hcf = 1;
         while ((n1 > 1) && (n2 > 1)) {
             for (int i = 2; ((i <= n1) || (i <= n2)); i++) {
-                if ((n1 % i == 0) && (n1 % i == 0)) {
+                if ((n1 % i == 0) && (n2 % i == 0)) {
                     n1 /= i;
                     n2 /= i;
                     hcf *= i;
@@ -51,7 +51,7 @@ public class LCMandHCF {
         int lcm = 1;
         while ((n1 > 1) || (n2 > 1)) {
             for (int i = 2; ((i <= n1) || (i <= n2)); i++) {
-                if ((n1 % i == 0) || (n1 % i == 0)) {
+                if ((n1 % i == 0) || (n2 % i == 0)) {
                     if (n1 % i == 0) {
                         n1 /= i;
                         System.out.println("n1 " + n1);
